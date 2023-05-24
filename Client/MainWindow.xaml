@@ -1,0 +1,17 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client" 
+        xmlns:viewmodels="clr-namespace:Client.ViewModels"
+        mc:Ignorable="d"
+        FontFamily="Arial"
+        Title="MainWindow" MinHeight="450" MinWidth="600" Background="{StaticResource Background}"
+        >
+    <Window.DataContext>
+        <viewmodels:MainViewModel></viewmodels:MainViewModel>
+    </Window.DataContext>
+    <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Content="{Binding CurrentPage}">
+    </Frame>
+</Window>

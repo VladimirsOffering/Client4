@@ -1,0 +1,44 @@
+﻿<Page x:Class="Client.Views.GamePage"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+          xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+          xmlns:local="clr-namespace:Client.Views" 
+          xmlns:viewmodels="clr-namespace:Client.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:GameViewModel}"
+      mc:Ignorable="d" 
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          d:Width="600"
+          d:Height="400"
+          Title="Game" Background="DarkGreen"
+         >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="6*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <ItemsControl x:Name="tStack" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding PlayerCards}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                    <Viewbox>
+                        <Border CornerRadius="8" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Black" BorderThickness="1" BorderBrush="LightGray"  Margin="5">
+                            <Image Width="89" Height="128" Source="{Binding img}"/>
+                        </Border>
+                    </Viewbox>
+                </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+</Page>
+    
